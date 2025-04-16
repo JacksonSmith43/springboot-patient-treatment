@@ -1,0 +1,17 @@
+# Setup
+- Go to the root of the project and type: `docker-compose up -d` to start the container.
+- Open IntelliJ.
+- Type in a Terminal: `./build-and-run.sh`
+  - sh only works in Bash.
+  - This builds and adds the necessary things (Maven) and also starts a container for Spring Boot and for PostgreSQL respectively.
+  - Make sure that the program is not running (IntelliJ).
+- Go to the Database (IntelliJ plugin):
+  - Create -> Data Source -> PostgreSQL
+  - Fill in:
+    - Host: localhost
+    - User: postgres
+    - Port: 5433
+    - password: secret123
+    - Database: patientdb
+- Run the program (IntelliJ).
+- Refresh the database. 
