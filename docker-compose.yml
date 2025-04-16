@@ -1,0 +1,29 @@
+services:
+  db:
+    image: bitnami/postgresql:latest
+    container_name: bitnami-postgres-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=secret123
+      - POSTGRES_DB=patientdb
+    ports:
+      - "5433:5432"
+   # volumes:
+    #  - ./init.sql:/docker-entrypoint-initdb.d/init.sql # Only gets created after the first container initiation. Put sql files in resources for updates.
+    networks:
+      - mynetwork
+
+  app:
+    build: .
+    container_name: spring-app
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+    environment:
+      # Diese Variablen können in application.properties genutzt werden (über Platzhalter)
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/patientdb
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: secret
+networks:
+  mynetwork:
