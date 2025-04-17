@@ -1,3 +1,5 @@
+com\patient\patient_treatment\DoctorRepository.class
 com\patient\patient_treatment\PatientRepository.class
+com\patient\patient_treatment\Doctor.class
 com\patient\patient_treatment\Patient.class
 com\patient\patient_treatment\PatientTreatmentApplication.class
