@@ -45,4 +45,18 @@ public class PatientTreatmentApplication {
         };
     }
 
+    @Bean
+    CommandLineRunner hospitalCommandLineRunner(HospitalRepository hospitalRepository) {
+        return args -> {
+            Hospital tardisHospital = new Hospital("Tardis Hospital");
+            Hospital sanJose = new Hospital("San Jose");
+            Hospital holbyCity = new Hospital("Holby City");
+            Hospital stJames = new Hospital("St James´s");
+            Hospital ninewells = new Hospital("Ninewells");
+            Hospital kingsCross = new Hospital("Kings Cross");
+
+            hospitalRepository.saveAll(List.of(tardisHospital, sanJose, holbyCity, stJames, ninewells, kingsCross));
+        };
+    }
+
 }
