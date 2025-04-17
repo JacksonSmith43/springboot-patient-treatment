@@ -1,6 +1,9 @@
 package com.patient.patient_treatment;
 
 import jakarta.persistence.*;
+
+import java.util.List;
+
 import static jakarta.persistence.GenerationType.SEQUENCE;
 
 @Entity(name = "Doctor")
@@ -29,6 +32,9 @@ public class Doctor {
         this.name = name;
         this.speciality = speciality;
     }
+
+    @OneToMany(mappedBy = "doctor")
+    private List<Treatment> treatments;
 
     public Doctor() {
 

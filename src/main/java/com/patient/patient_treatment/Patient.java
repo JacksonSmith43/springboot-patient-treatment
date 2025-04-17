@@ -1,27 +1,17 @@
 package com.patient.patient_treatment;
 
 import jakarta.persistence.*;
+
+import java.util.List;
+
 import static jakarta.persistence.GenerationType.SEQUENCE;
 
 @Entity(name = "Patient") // name should be the class name.
 public class Patient {
     @Id
-    @SequenceGenerator(
-            name = "patient_sequence",
-            sequenceName = "patient_sequence",
-            allocationSize = 1
-    )
-
-    @GeneratedValue(
-            strategy = SEQUENCE,
-            generator = "patient_sequence"
-    )
-
-    @Column(
-            name = "id",
-            updatable = false
-    )
-
+    @SequenceGenerator(name = "patient_sequence", sequenceName = "patient_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = SEQUENCE, generator = "patient_sequence")
+    @Column(name = "id", updatable = false)
     private Long id;
 
     @Column(
@@ -43,6 +33,9 @@ public class Patient {
             nullable = false
     )
     private String birthdate;
+
+    @OneToMany(mappedBy = "patient")
+    private List<Treatment> treatments;
 
     public Patient(String first_name, String last_name, String birthdate) { // id can be removed, because it gets generated.
         this.first_name = first_name;
