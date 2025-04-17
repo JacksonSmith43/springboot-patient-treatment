@@ -59,4 +59,19 @@ public class PatientTreatmentApplication {
         };
     }
 
+    @Bean
+    CommandLineRunner illnessCommandLineRunner(IllnessRepository illnessRepository) {
+        return args -> {
+            Illness autism = new Illness("Autism");
+            Illness fibromyalgie = new Illness("Fibromyalgie");
+            Illness diabetes = new Illness("Diabetes");
+            Illness angina = new Illness("Angina");
+            Illness pneumonia = new Illness("Pneumonia");
+            Illness cancer = new Illness("Cancer");
+            Illness ocd = new Illness("OCD");
+
+            illnessRepository.saveAll(List.of(autism, fibromyalgie, diabetes, angina, pneumonia, cancer, ocd));
+        };
+    }
+
 }
