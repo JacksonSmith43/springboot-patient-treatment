@@ -1,7 +1,6 @@
 # Setup
-- Go to the root of the project and type: `docker-compose up -d` to start the container.
 - Open IntelliJ.
-- Type in a Terminal: `./build-and-run.sh`
+- Go to the root of the project and type: `./build-and-run.sh` in a Terminal: 
   - sh only works in Bash.
   - This builds and adds the necessary things (Maven) and also starts a container for Spring Boot and for PostgreSQL respectively.
   - Make sure that the program is not running (IntelliJ).
