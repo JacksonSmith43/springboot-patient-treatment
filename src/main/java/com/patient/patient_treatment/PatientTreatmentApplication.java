@@ -1,5 +1,7 @@
 package com.patient.patient_treatment;
 
+import com.patient.patient_treatment.entity.*;
+import com.patient.patient_treatment.repository.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

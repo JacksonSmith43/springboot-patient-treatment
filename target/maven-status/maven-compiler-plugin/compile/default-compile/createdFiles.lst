@@ -1,5 +1,11 @@
 com\patient\patient_treatment\DoctorRepository.class
+com\patient\patient_treatment\IllnessRepository.class
+com\patient\patient_treatment\Illness.class
+com\patient\patient_treatment\TreatmentRepository.class
+com\patient\patient_treatment\HospitalRepository.class
 com\patient\patient_treatment\PatientRepository.class
 com\patient\patient_treatment\Doctor.class
 com\patient\patient_treatment\Patient.class
 com\patient\patient_treatment\PatientTreatmentApplication.class
+com\patient\patient_treatment\Treatment.class
+com\patient\patient_treatment\Hospital.class
