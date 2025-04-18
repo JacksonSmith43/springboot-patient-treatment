@@ -16,7 +16,7 @@ public class Hospital {
     private Long id;
 
     @Column(name = "name")
-    private String hospital_name;
+    private String hospitalName;
 
     @OneToMany(mappedBy = "hospital")
     private List<Treatment> treatments;
@@ -24,24 +24,21 @@ public class Hospital {
     public Hospital() {
 
     }
-
-    public Hospital(String hospital_name) {
-        this.hospital_name = hospital_name;
+    public Hospital(String hospitalName) {
+        this.hospitalName = hospitalName;
     }
 
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
 
-    public String getHospital_name() {
-        return hospital_name;
+    public String getHospitalName() {
+        return hospitalName;
     }
-
-    public void setHospital_name(String hospital_name) {
-        this.hospital_name = hospital_name;
+    public void setHospitalName(String hospitalName) {
+        this.hospitalName = hospitalName;
     }
 }

@@ -1,7 +1,6 @@
 package com.patient.patient_treatment.entity;
 
 import jakarta.persistence.*;
-
 import static jakarta.persistence.GenerationType.SEQUENCE;
 
 @Entity(name = "Treatment")
@@ -11,7 +10,7 @@ public class Treatment {
     @SequenceGenerator(name = "treatment_id", sequenceName = "treatment_sequence")
     @GeneratedValue(strategy = SEQUENCE, generator = "treatment_sequence")
     @Column(name = "treatment_id")
-    private Long treatment_id;
+    private Long treatmentId;
 
     @ManyToOne
     @JoinColumn(name = "patient_id")
@@ -33,16 +32,15 @@ public class Treatment {
 
 
     public Treatment() {
-
     }
 
-    public Treatment(String date, Hospital hospital, Doctor doctor, Illness illness, Patient patient, Long treatment_id) {
+    public Treatment(String date, Hospital hospital, Doctor doctor, Illness illness, Patient patient, Long treatmentId) {
         this.date = date;
         this.hospital = hospital;
         this.doctor = doctor;
         this.illness = illness;
         this.patient = patient;
-        this.treatment_id = treatment_id;
+        this.treatmentId = treatmentId;
     }
 
     public Treatment(String date, Hospital hospital, Doctor doctor, Illness illness, Patient patient) {
@@ -54,18 +52,16 @@ public class Treatment {
     }
 
 
-    public Long getTreatment_id() {
-        return treatment_id;
+    public Long getTreatmentId() {
+        return treatmentId;
     }
-
-    public void setTreatment_id(Long treatment_id) {
-        this.treatment_id = treatment_id;
+    public void setTreatmentId(Long treatment_id) {
+        this.treatmentId = treatment_id;
     }
 
     public Patient getPatient_id() {
         return patient;
     }
-
     public void setPatient_id(Patient patient) {
         this.patient = patient;
     }
@@ -73,7 +69,6 @@ public class Treatment {
     public Illness getIllness() {
         return illness;
     }
-
     public void setIllness(Illness illness) {
         this.illness = illness;
     }
@@ -81,7 +76,6 @@ public class Treatment {
     public Doctor getDoctor() {
         return doctor;
     }
-
     public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
     }
@@ -89,7 +83,6 @@ public class Treatment {
     public Hospital getHospital() {
         return hospital;
     }
-
     public void setHospital(Hospital hospital) {
         this.hospital = hospital;
     }
@@ -97,7 +90,6 @@ public class Treatment {
     public String getDate() {
         return date;
     }
-
     public void setDate(String date) {
         this.date = date;
     }

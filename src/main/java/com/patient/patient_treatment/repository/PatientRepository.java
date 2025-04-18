@@ -8,4 +8,7 @@ import java.util.List;
 public interface PatientRepository extends JpaRepository<Patient, Long> {
 
     List<Patient> getPatientByFirstNameContainingIgnoreCase(String firstName);
+    List<Patient> getPatientByLastNameContainingIgnoreCase(String lastName);
+
 }
+

@@ -1,9 +1,7 @@
 package com.patient.patient_treatment.entity;
 
 import jakarta.persistence.*;
-
 import java.util.List;
-
 import static jakarta.persistence.GenerationType.SEQUENCE;
 
 @Entity(name = "Doctor")
@@ -12,26 +10,15 @@ public class Doctor {
     @Id
     @SequenceGenerator(name = "doctor_sequence", sequenceName = "doctor_sequence")
     @GeneratedValue(strategy = SEQUENCE, generator = "doctor_sequence")
-    @Column(
-            name = "id",
-            updatable = false
-    )
+    @Column(name = "id", updatable = false)
     private Long id;
 
-    @Column(
-            name = "name"
-    )
+    @Column(name = "name")
     private String name;
 
-    @Column(
-            name = "speciality"
-    )
+    @Column(name = "speciality")
     private String speciality;
 
-    public Doctor(String name, String speciality) {
-        this.name = name;
-        this.speciality = speciality;
-    }
 
     @OneToMany(mappedBy = "doctor")
     private List<Treatment> treatments;
@@ -39,11 +26,14 @@ public class Doctor {
     public Doctor() {
 
     }
+    public Doctor(String name, String speciality) {
+        this.name = name;
+        this.speciality = speciality;
+    }
 
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -51,7 +41,6 @@ public class Doctor {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -59,7 +48,6 @@ public class Doctor {
     public String getSpeciality() {
         return speciality;
     }
-
     public void setSpeciality(String speciality) {
         this.speciality = speciality;
     }

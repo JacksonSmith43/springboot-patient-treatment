@@ -24,15 +24,12 @@ public class Illness {
     public Illness(String name) {
         this.name = name;
     }
-
     public Illness() {
-
     }
 
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -40,7 +37,6 @@ public class Illness {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }

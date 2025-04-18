@@ -35,5 +35,10 @@ public class PatientController {
         return patientRepository.getPatientByFirstNameContainingIgnoreCase(firstName);
     }
 
+    @GetMapping("/patient/lastName/{lastName}")
+    public List<Patient> getPatientByLastName(@PathVariable String lastName) {
+        return patientRepository.getPatientByLastNameContainingIgnoreCase(lastName);
+    }
+
 
 }
