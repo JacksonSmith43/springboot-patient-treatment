@@ -19,14 +19,14 @@ public class Patient {
             nullable = false,
             columnDefinition = "TEXT" // Makes it TEXT and not NULL.
     )
-    private String first_name;
+    private String firstName;
 
     @Column(
             name = "last_name",
             nullable = false,
             columnDefinition = "TEXT"
     )
-    private String last_name;
+    private String lastName;
 
     @Column(
             name = "birthdate",
@@ -37,9 +37,9 @@ public class Patient {
     @OneToMany(mappedBy = "patient")
     private List<Treatment> treatments;
 
-    public Patient(String first_name, String last_name, String birthdate) { // id can be removed, because it gets generated.
-        this.first_name = first_name;
-        this.last_name = last_name;
+    public Patient(String firstName, String lastName, String birthdate) { // id can be removed, because it gets generated.
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.birthdate = birthdate;
     }
 
@@ -55,20 +55,20 @@ public class Patient {
         this.id = id;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getBirthdate() {
@@ -83,8 +83,8 @@ public class Patient {
     public String toString() {
         return "Patient{" +
                 "id=" + id +
-                ", first_name='" + first_name + '\'' +
-                ", last_name='" + last_name + '\'' +
+                ", first_name='" + firstName + '\'' +
+                ", last_name='" + lastName + '\'' +
                 ", birthdate=" + birthdate +
                 '}';
     }
