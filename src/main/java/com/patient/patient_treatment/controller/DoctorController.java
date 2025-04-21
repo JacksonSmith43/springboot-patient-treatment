@@ -32,7 +32,7 @@ public class DoctorController {
     }
 
     @GetMapping("/doctor/name/{name}")
-    public List<Doctor> getPatientByName(@PathVariable String name) {
+    public List<Doctor> getDoctorsByName(@PathVariable String name) {
         return doctorRepository.getDoctorByNameContainingIgnoreCase(name);
     }
 }
