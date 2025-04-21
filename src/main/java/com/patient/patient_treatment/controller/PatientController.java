@@ -11,13 +11,12 @@ import java.util.List;
 @RestController
 public class PatientController {
 
-    final PatientRepository patientRepository;
     private final PatientService patientService;
 
-    public PatientController(PatientRepository patientRepository, PatientService patientService) {
-        this.patientRepository = patientRepository;
+    public PatientController(PatientService patientService) {
         this.patientService = patientService;
     }
+
 
     @GetMapping("/patient")
     public List<Patient> getAllPatients() {
