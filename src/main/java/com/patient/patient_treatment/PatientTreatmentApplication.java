@@ -2,10 +2,13 @@ package com.patient.patient_treatment;
 
 import com.patient.patient_treatment.entity.*;
 import com.patient.patient_treatment.repository.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
+
 import java.util.List;
 
 @SpringBootApplication
@@ -17,7 +20,8 @@ public class PatientTreatmentApplication {
 
 
     @Bean
-    CommandLineRunner treatmentCommandLineRunner(PatientRepository patientRepository,
+    @Profile("!test")
+    CommandLineRunner treatmentCommandLineRunner(@Autowired(required = false) PatientRepository patientRepository,
                                                  DoctorRepository doctorRepository,
                                                  IllnessRepository illnessRepository,
                                                  HospitalRepository hospitalRepository,

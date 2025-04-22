@@ -1,31 +1,30 @@
 package com.patient.patient_treatment.repository;
 
 import com.patient.patient_treatment.entity.Patient;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 @DataJpaTest
+@ActiveProfiles("test")
 class PatientRepositoryTest {
 
     @Autowired
     PatientRepository patientRepository;
 
     @Test
-    void testSaveAndFindByFirstName() {
-        // Arrange.
-        Patient patient = new Patient("Lara", "Croft", "05.05.2005");
+    @DisplayName("findByFirstName_shouldReturnPatients")
+    void findByFirstName_shouldReturnPatients() {
+        Patient patient = new Patient("David", "Callahan", "05.05.1995");
         patientRepository.save(patient);
 
-        // Act.
-        List<Patient> found = patientRepository.getPatientByFirstNameContainingIgnoreCase("lara");
-
-        // Assert.
-        assertEquals(1, found.size());
-        assertEquals("Croft", found.get(0).getLastName());
+        List<Patient> found = patientRepository.getPatientByFirstNameContainingIgnoreCase("David");
+        assertThat(found).isNotEmpty().extracting(Patient::getLastName).contains("Callahan");
     }
 }

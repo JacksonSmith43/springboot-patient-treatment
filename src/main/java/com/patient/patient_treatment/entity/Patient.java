@@ -36,6 +36,9 @@ public class Patient {
 
     }
 
+    public Patient(long id, String firstName, String lastName, String birthdate) {
+    }
+
     public Long getId() {
         return id;
     }

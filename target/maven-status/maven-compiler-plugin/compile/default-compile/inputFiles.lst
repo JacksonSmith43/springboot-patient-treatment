@@ -14,3 +14,8 @@ C:\Users\Jackson Smith\IntelliJ\springboot-patient-treatment\src\main\java\com\p
 C:\Users\Jackson Smith\IntelliJ\springboot-patient-treatment\src\main\java\com\patient\patient_treatment\repository\IllnessRepository.java
 C:\Users\Jackson Smith\IntelliJ\springboot-patient-treatment\src\main\java\com\patient\patient_treatment\repository\PatientRepository.java
 C:\Users\Jackson Smith\IntelliJ\springboot-patient-treatment\src\main\java\com\patient\patient_treatment\repository\TreatmentRepository.java
+C:\Users\Jackson Smith\IntelliJ\springboot-patient-treatment\src\main\java\com\patient\patient_treatment\service\DoctorService.java
+C:\Users\Jackson Smith\IntelliJ\springboot-patient-treatment\src\main\java\com\patient\patient_treatment\service\HospitalService.java
+C:\Users\Jackson Smith\IntelliJ\springboot-patient-treatment\src\main\java\com\patient\patient_treatment\service\IllnessService.java
+C:\Users\Jackson Smith\IntelliJ\springboot-patient-treatment\src\main\java\com\patient\patient_treatment\service\PatientService.java
+C:\Users\Jackson Smith\IntelliJ\springboot-patient-treatment\src\main\java\com\patient\patient_treatment\service\TreatmentService.java

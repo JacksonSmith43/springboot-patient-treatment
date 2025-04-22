@@ -1,1 +1,4 @@
+com\patient\patient_treatment\controller\PatientControllerTest.class
+com\patient\patient_treatment\repository\PatientRepositoryTest.class
+com\patient\patient_treatment\service\PatientServiceTest.class
 com\patient\patient_treatment\PatientTreatmentApplicationTests.class

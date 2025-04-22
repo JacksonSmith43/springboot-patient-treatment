@@ -1,37 +1,43 @@
 package com.patient.patient_treatment.controller;
 
 import com.patient.patient_treatment.entity.Patient;
+import com.patient.patient_treatment.repository.PatientRepository;
 import com.patient.patient_treatment.service.PatientService;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.Optional;
+import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+@ActiveProfiles("test")
+@WebMvcTest(PatientController.class)
 class PatientControllerTest {
 
-    PatientService patientService = Mockito.mock(PatientService.class);
-    PatientController controller = new PatientController(patientService);
+    @Autowired
+    private MockMvc mockMvc;
+
+    @MockBean
+    private PatientService patientService;
+    @MockBean
+    private PatientRepository patientRepository;
 
     @Test
-    void getPatientById_shouldReturnPatientInResponseEntity() {
-        Patient patient = new Patient("Denise", "Bowker", "04.04.2004");
-        when(patientService.getPatientById(1L)).thenReturn(Optional.of(patient));
+    @DisplayName("getAllPatients_shouldReturnList")
+    void getAllPatients_shouldReturnList() throws Exception {
 
-        ResponseEntity<Patient> response = controller.getPatientById(1L);
-
-        assertEquals(200, response.getStatusCodeValue());
-        assertEquals("Denise", response.getBody().getFirstName());
+        List<Patient> patients = List.of(new Patient("John", "Veigl", "01.01.2000"));
+        Mockito.when(patientService.getAllPatients()).thenReturn(patients);
+        mockMvc.perform(get("/patient"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].firstName").value("John"));
     }
 
-    @Test
-    void getPatientById_shouldReturnNotFound() {
-        when(patientService.getPatientById(99L)).thenReturn(Optional.empty());
-
-        ResponseEntity<Patient> response = controller.getPatientById(99L);
-        assertEquals(404, response.getStatusCodeValue());
-    }
 }

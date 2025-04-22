@@ -1,7 +1,6 @@
 package com.patient.patient_treatment.controller;
 
 import com.patient.patient_treatment.entity.Patient;
-import com.patient.patient_treatment.repository.PatientRepository;
 import com.patient.patient_treatment.service.PatientService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,3 +1,5 @@
+com\patient\patient_treatment\service\DoctorService.class
+com\patient\patient_treatment\service\IllnessService.class
 com\patient\patient_treatment\entity\Doctor.class
 com\patient\patient_treatment\repository\IllnessRepository.class
 com\patient\patient_treatment\controller\DoctorController.class
@@ -11,6 +13,9 @@ com\patient\patient_treatment\repository\HospitalRepository.class
 com\patient\patient_treatment\entity\Treatment.class
 com\patient\patient_treatment\PatientTreatmentApplication.class
 com\patient\patient_treatment\entity\Patient.class
+com\patient\patient_treatment\service\TreatmentService.class
+com\patient\patient_treatment\service\HospitalService.class
+com\patient\patient_treatment\service\PatientService.class
 com\patient\patient_treatment\controller\PatientController.class
 com\patient\patient_treatment\entity\Hospital.class
 com\patient\patient_treatment\entity\Illness.class
