@@ -75,5 +75,4 @@ public class PatientTreatmentApplication {
             treatmentRepository.saveAll(List.of(treatment1, treatment2, treatment3, treatment4, treatment5, treatment6, treatment7));
         };
     }
-
 }
