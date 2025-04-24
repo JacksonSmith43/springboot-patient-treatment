@@ -96,6 +96,8 @@ class PatientControllerTest {
         mockMvc.perform(get("/patient/firstName/Vincent"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("[]"));
+        Mockito.verify(patientService).getPatientByFirstName("Vincent");
+
     }
 
     @Test
@@ -119,6 +121,8 @@ class PatientControllerTest {
         mockMvc.perform(get("/patient/lastName/Barrowman"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("[]"));
+        Mockito.verify(patientService).getPatientByLastName("Barrowman");
+
     }
 
     // TODO: Might do birthdate one day.
